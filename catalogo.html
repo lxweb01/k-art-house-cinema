@@ -78,49 +78,49 @@
                         </thead>
                         <tbody id="movie-list">
                             <tr>
-                                <td><a href="#">Spring Summer Fall Winter... and Spring</a></td>
+                                <td><a href="#" onclick="showMovieDetails('Spring Summer Fall Winter... and Spring')">Spring Summer Fall Winter... and Spring</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2003</td>
                                 <td>21</td>
                             </tr>
                             <tr>
-                                <td><a href="#">3-Iron</a></td>
+                                <td><a href="#" onclick="showMovieDetails('3-Iron')">3-Iron</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2004</td>
                                 <td>13</td>
                             </tr>
                             <tr>
-                                <td><a href="#">Oldboy</a></td>
+                                <td><a href="#" onclick="showMovieDetails('Oldboy')">Oldboy</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2003</td>
                                 <td>6</td>
                             </tr>
                             <tr>
-                                <td><a href="#">Parasite</a></td>
+                                <td><a href="#" onclick="showMovieDetails('Parasite')">Parasite</a></td>
                                 <td>Bong Joon-ho</td>
                                 <td>2019</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td><a href="#">Memories of Murder</a></td>
+                                <td><a href="#" onclick="showMovieDetails('Memories of Murder')">Memories of Murder</a></td>
                                 <td>Bong Joon-ho</td>
                                 <td>2003</td>
                                 <td>7</td>
                             </tr>
                             <tr>
-                                <td><a href="#">Pietà</a></td>
+                                <td><a href="#" onclick="showMovieDetails('Pietà')">Pietà</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2012</td>
                                 <td>15</td>
                             </tr>
                             <tr>
-                                <td><a href="#">I'm a Cyborg, But That's OK</a></td>
+                                <td><a href="#" onclick="showMovieDetails('I\'m a Cyborg, But That\'s OK')">I'm a Cyborg, But That's OK</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2006</td>
                                 <td>9</td>
                             </tr>
                             <tr>
-                                <td><a href="#">The Handmaiden</a></td>
+                                <td><a href="#" onclick="showMovieDetails('The Handmaiden')">The Handmaiden</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2016</td>
                                 <td>5</td>
@@ -153,42 +153,6 @@
         <p>&copy; 2024 All Rights Reserved</p>
     </footer>
 
-    <script>
-        function searchCatalog() {
-            const query = document.getElementById('search-bar').value.toLowerCase();
-            const rows = document.querySelectorAll('#movie-list tr');
-            rows.forEach(row => {
-                const title = row.querySelector('td:first-child a').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-            return false; // Prevent form submission
-        }
-
-        function filterCatalog() {
-            const author = document.getElementById('author').value;
-            const year = document.getElementById('year').value;
-            const rating = document.getElementById('rating').value;
-            const rows = document.querySelectorAll('#movie-list tr');
-            rows.forEach(row => {
-                const rowAuthor = row.querySelector('td:nth-child(2)').textContent;
-                const rowYear = row.querySelector('td:nth-child(3)').textContent;
-                const rowRating = row.querySelector('td:nth-child(4)').textContent;
-                let display = true;
-                if (author && rowAuthor !== author) display = false;
-                if (year && rowYear !== year) display = false;
-                if (rating && rowRating !== rating) display = false;
-                row.style.display = display ? '' : 'none';
-            });
-        }
-
-        function viewAll() {
-            const rows = document.querySelectorAll('#movie-list tr');
-            rows.forEach(row => row.style.display = '');
-        }
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
