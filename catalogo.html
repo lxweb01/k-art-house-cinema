@@ -18,8 +18,8 @@
                     <li class="nav-item"><a class="nav-link text-white" href="#">Profile</a></li>
                 </ul>
             </nav>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline" onsubmit="return searchCatalog()">
+                <input id="search-bar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -32,32 +32,37 @@
                     <div class="form-group">
                         <label for="author">Author:</label>
                         <select class="form-control" id="author">
-                            <option>Kim Ki-duk</option>
-                            <option>Park Chan-wook</option>
-                            <option>Bong Joon-ho</option>
+                            <option value="">All</option>
+                            <option value="Kim Ki-duk">Kim Ki-duk</option>
+                            <option value="Park Chan-wook">Park Chan-wook</option>
+                            <option value="Bong Joon-ho">Bong Joon-ho</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="year">Year:</label>
                         <select class="form-control" id="year">
-                            <option>2003</option>
-                            <option>2004</option>
-                            <option>2005</option>
-                            <option>2006</option>
-                            <option>2012</option>
-                            <option>2016</option>
+                            <option value="">All</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2012">2012</option>
+                            <option value="2016">2016</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="rating">Rating:</label>
                         <select class="form-control" id="rating">
-                            <option>1 Star</option>
-                            <option>2 Stars</option>
-                            <option>3 Stars</option>
-                            <option>4 Stars</option>
-                            <option>5 Stars</option>
+                            <option value="">All</option>
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="5">5 Stars</option>
                         </select>
                     </div>
+                    <button class="btn btn-primary" onclick="filterCatalog()">Filter</button>
+                    <button class="btn btn-secondary mt-2" onclick="viewAll()">View All</button>
                 </div>
             </aside>
             <section class="col-md-9">
@@ -71,7 +76,7 @@
                                 <th>Rank</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="movie-list">
                             <tr>
                                 <td>Spring Summer Fall Winter... and Spring</td>
                                 <td>Kim Ki-duk</td>
@@ -96,6 +101,7 @@
                                 <td>2019</td>
                                 <td>1</td>
                             </tr>
+                            <!-- Add more movies as needed -->
                         </tbody>
                     </table>
                 </div>
@@ -123,5 +129,43 @@
     <footer class="bg-dark text-white text-center py-2">
         <p>&copy; 2024 All Rights Reserved</p>
     </footer>
+
+    <script>
+        function searchCatalog() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const rows = document.querySelectorAll('#movie-list tr');
+            rows.forEach(row => {
+                const title = row.querySelector('td:first-child').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            return false; // Prevent form submission
+        }
+
+        function filterCatalog() {
+            const author = document.getElementById('author').value;
+            const year = document.getElementById('year').value;
+            const rating = document.getElementById('rating').value;
+            const rows = document.querySelectorAll('#movie-list tr');
+            rows.forEach(row => {
+                const rowAuthor = row.querySelector('td:nth-child(2)').textContent;
+                const rowYear = row.querySelector('td:nth-child(3)').textContent;
+                const rowRating = row.querySelector('td:nth-child(4)').textContent;
+                let display = true;
+                if (author && rowAuthor !== author) display = false;
+                if (year && rowYear !== year) display = false;
+                if (rating && rowRating !== rating) display = false;
+                row.style.display = display ? '' : 'none';
+            });
+        }
+
+        function viewAll() {
+            const rows = document.querySelectorAll('#movie-list tr');
+            rows.forEach(row => row.style.display = '');
+        }
+    </script>
 </body>
 </html>
