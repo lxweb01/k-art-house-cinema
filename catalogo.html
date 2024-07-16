@@ -78,30 +78,53 @@
                         </thead>
                         <tbody id="movie-list">
                             <tr>
-                                <td>Spring Summer Fall Winter... and Spring</td>
+                                <td><a href="#">Spring Summer Fall Winter... and Spring</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2003</td>
                                 <td>21</td>
                             </tr>
                             <tr>
-                                <td>3-Iron</td>
+                                <td><a href="#">3-Iron</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2004</td>
                                 <td>13</td>
                             </tr>
                             <tr>
-                                <td>Oldboy</td>
+                                <td><a href="#">Oldboy</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2003</td>
                                 <td>6</td>
                             </tr>
                             <tr>
-                                <td>Parasite</td>
+                                <td><a href="#">Parasite</a></td>
                                 <td>Bong Joon-ho</td>
                                 <td>2019</td>
                                 <td>1</td>
                             </tr>
-                            <!-- Add more movies as needed -->
+                            <tr>
+                                <td><a href="#">Memories of Murder</a></td>
+                                <td>Bong Joon-ho</td>
+                                <td>2003</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Pietà</a></td>
+                                <td>Kim Ki-duk</td>
+                                <td>2012</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">I'm a Cyborg, But That's OK</a></td>
+                                <td>Park Chan-wook</td>
+                                <td>2006</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">The Handmaiden</a></td>
+                                <td>Park Chan-wook</td>
+                                <td>2016</td>
+                                <td>5</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -135,7 +158,7 @@
             const query = document.getElementById('search-bar').value.toLowerCase();
             const rows = document.querySelectorAll('#movie-list tr');
             rows.forEach(row => {
-                const title = row.querySelector('td:first-child').textContent.toLowerCase();
+                const title = row.querySelector('td:first-child a').textContent.toLowerCase();
                 if (title.includes(query)) {
                     row.style.display = '';
                 } else {
