@@ -5,45 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Art House Cinema - Feed</title>
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
+    <header class="bg-dark text-white text-center py-2">
         <img src="img/website-logo.png" alt="K-Art House Cinema Logo" class="logo">
         <nav>
-            <ul>
-                <li><a href="index.html">Feed</a></li>
-                <li><a href="catalogo.html">Catalog</a></li>
-                <li><a href="#">Profile</a></li>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html">Feed</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="catalogo.html">Catalog</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Profile</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="container mt-4">
         <section class="movie-feed">
-            <article class="movie">
+            <article class="movie mb-5">
                 <h2>Spring Summer Fall Winter... and Spring</h2>
-                <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring">
+                <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring" class="img-fluid mb-3">
                 <p><strong>Directed by:</strong> Kim Ki-duk</p>
                 <p><strong>Release date:</strong> 19 September 2003</p>
                 <p><strong>Box office:</strong> $9.53 million</p>
                 <p><strong>Comments:</strong></p>
-                <ul>
-                    <li>JHON JHON: This movie captures the essence of karma in the Buddhist belief</li>
-                    <li>JACK JACK: Kim-Ki Duk has outdone himself with this one</li>
-                    <li>BETTY BETTY: Jhon Jhon is just yapping at this point</li>
-                    <li>JOEY TEMPEST: Watched the movie and didn’t understand anything</li>
+                <ul class="list-unstyled">
+                    <li class="comment">
+                        JHON JHON: This movie captures the essence of karma in the Buddhist belief
+                        <span class="upvote">&#x1F44D; Like : 12</span> 
+                        <span class="downvote">&#x1F44E; Dislike : 4</span>
+                    </li>
+                    <li class="comment">
+                        JACK JACK: Kim-Ki Duk has outdone himself with this one
+                        <span class="upvote">&#x1F44D; Like : 10</span> 
+                        <span class="downvote">&#x1F44E; Dislike : 3</span>
+                    </li>
+                    <li class="comment">
+                        BETTY BETTY: Jhon Jhon is just yapping at this point
+                        <span class="upvote">&#x1F44D; Like : 5</span> 
+                        <span class="downvote">&#x1F44E; Dislike : 2</span>
+                    </li>
+                    <li class="comment">
+                        JOEY TEMPEST: Watched the movie and didn’t understand anything
+                        <span class="upvote">&#x1F44D; Like : 3</span> 
+                        <span class="downvote">&#x1F44E; Dislike : 8</span>
+                    </li>
                 </ul>
             </article>
-            <article class="movie">
+            <article class="movie mb-5">
                 <h2>Memories of Murder</h2>
-                <img src="img/bong-joon-ho-memories.jpg" alt="Memories of Murder">
+                <img src="img/bong-joon-ho-memories.jpg" alt="Memories of Murder" class="img-fluid mb-3">
                 <p><strong>Directed by:</strong> Bong Joon-ho</p>
                 <p><strong>Release date:</strong> 2 May 2003</p>
                 <p><strong>Box office:</strong> $20.1 million</p>
             </article>
         </section>
     </main>
-    <footer>
-        <p>&copy; kelvin 2024 All Rights Reserved</p>
+    <footer class="bg-dark text-white text-center py-2">
+        <p>&copy; 2024 All Rights Reserved</p>
     </footer>
 </body>
 </html>
