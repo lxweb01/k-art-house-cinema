@@ -78,3 +78,7 @@ footer {
 .upvote:hover, .downvote:hover {
     text-decoration: underline;
 }
+
+.table-responsive {
+    margin-top: 20px;
+}
