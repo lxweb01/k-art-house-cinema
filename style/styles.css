@@ -65,3 +65,16 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.upvote, .downvote {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.upvote:hover, .downvote:hover {
+    text-decoration: underline;
+}
