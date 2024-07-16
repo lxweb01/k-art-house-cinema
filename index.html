@@ -18,8 +18,8 @@
                     <li class="nav-item"><a class="nav-link text-white" href="#">Profile</a></li>
                 </ul>
             </nav>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline" onsubmit="return searchMovies()">
+                <input id="search-bar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -37,48 +37,67 @@
                 </div>
             </aside>
             <section class="col-md-9">
-                <article class="movie mb-5">
-                    <h2>Spring Summer Fall Winter... and Spring</h2>
-                    <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring" class="img-fluid mb-3">
-                    <p><strong>Directed by:</strong> Kim Ki-duk</p>
-                    <p><strong>Release date:</strong> 19 September 2003</p>
-                    <p><strong>Box office:</strong> $9.53 million</p>
-                    <p><strong>Comments:</strong></p>
-                    <ul class="list-unstyled">
-                        <li class="comment">
-                            JHON JHON: This movie captures the essence of karma in the Buddhist belief
-                            <span class="upvote">&#x1F44D; Like : 12</span> 
-                            <span class="downvote">&#x1F44E; Dislike : 4</span>
-                        </li>
-                        <li class="comment">
-                            JACK JACK: Kim-Ki Duk has outdone himself with this one
-                            <span class="upvote">&#x1F44D; Like : 10</span> 
-                            <span class="downvote">&#x1F44E; Dislike : 3</span>
-                        </li>
-                        <li class="comment">
-                            BETTY BETTY: Jhon Jhon is just yapping at this point
-                            <span class="upvote">&#x1F44D; Like : 5</span> 
-                            <span class="downvote">&#x1F44E; Dislike : 2</span>
-                        </li>
-                        <li class="comment">
-                            JOEY TEMPEST: Watched the movie and didn’t understand anything
-                            <span class="upvote">&#x1F44D; Like : 3</span> 
-                            <span class="downvote">&#x1F44E; Dislike : 8</span>
-                        </li>
-                    </ul>
-                </article>
-                <article class="movie mb-5">
-                    <h2>Memories of Murder</h2>
-                    <img src="img/bong-joon-ho-memories.jpg" alt="Memories of Murder" class="img-fluid mb-3">
-                    <p><strong>Directed by:</strong> Bong Joon-ho</p>
-                    <p><strong>Release date:</strong> 2 May 2003</p>
-                    <p><strong>Box office:</strong> $20.1 million</p>
-                </article>
+                <div id="movie-feed">
+                    <article class="movie mb-5">
+                        <h2>Spring Summer Fall Winter... and Spring</h2>
+                        <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring" class="img-fluid mb-3">
+                        <p><strong>Directed by:</strong> Kim Ki-duk</p>
+                        <p><strong>Release date:</strong> 19 September 2003</p>
+                        <p><strong>Box office:</strong> $9.53 million</p>
+                        <p><strong>Comments:</strong></p>
+                        <ul class="list-unstyled">
+                            <li class="comment">
+                                JHON JHON: This movie captures the essence of karma in the Buddhist belief
+                                <span class="upvote">&#x1F44D; Like : 12</span> 
+                                <span class="downvote">&#x1F44E; Dislike : 4</span>
+                            </li>
+                            <li class="comment">
+                                JACK JACK: Kim-Ki Duk has outdone himself with this one
+                                <span class="upvote">&#x1F44D; Like : 10</span> 
+                                <span class="downvote">&#x1F44E; Dislike : 3</span>
+                            </li>
+                            <li class="comment">
+                                BETTY BETTY: Jhon Jhon is just yapping at this point
+                                <span class="upvote">&#x1F44D; Like : 5</span> 
+                                <span class="downvote">&#x1F44E; Dislike : 2</span>
+                            </li>
+                            <li class="comment">
+                                JOEY TEMPEST: Watched the movie and didn’t understand anything
+                                <span class="upvote">&#x1F44D; Like : 3</span> 
+                                <span class="downvote">&#x1F44E; Dislike : 8</span>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="movie mb-5">
+                        <h2>Memories of Murder</h2>
+                        <img src="img/bong-joon-ho-memories.jpg" alt="Memories of Murder" class="img-fluid mb-3">
+                        <p><strong>Directed by:</strong> Bong Joon-ho</p>
+                        <p><strong>Release date:</strong> 2 May 2003</p>
+                        <p><strong>Box office:</strong> $20.1 million</p>
+                    </article>
+                    <!-- Add more movie articles as needed -->
+                </div>
             </section>
         </div>
     </main>
     <footer class="bg-dark text-white text-center py-2">
         <p>&copy; 2024 All Rights Reserved</p>
     </footer>
+
+    <script>
+        function searchMovies() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const movies = document.querySelectorAll('.movie');
+            movies.forEach(movie => {
+                const title = movie.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    movie.style.display = 'block';
+                } else {
+                    movie.style.display = 'none';
+                }
+            });
+            return false; // Prevent form submission
+        }
+    </script>
 </body>
 </html>
