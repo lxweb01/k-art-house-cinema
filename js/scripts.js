@@ -57,6 +57,24 @@ const movies = {
     }
 };
 
+const authors = {
+    'kim-ki-duk': {
+        name: 'Kim Ki-duk',
+        img: 'img/kim-ki-duk.jpg',
+        works: ['Spring Summer Fall Winter... and Spring', '3-Iron', 'Pietà']
+    },
+    'park-chan-wook': {
+        name: 'Park Chan-wook',
+        img: 'img/park-chan-wook.jpg',
+        works: ['Oldboy', 'I\'m a Cyborg, But That\'s OK', 'The Handmaiden']
+    },
+    'bong-joon-ho': {
+        name: 'Bong Joon-ho',
+        img: 'img/bong-joon-ho.jpg',
+        works: ['Memories of Murder', 'The Host', 'Snowpiercer']
+    }
+};
+
 function searchMovies() {
     const query = document.getElementById('search-bar').value.toLowerCase();
     const movies = document.querySelectorAll('#movie-feed .movie');
@@ -86,17 +104,18 @@ function searchCatalog() {
 }
 
 function filterCatalog() {
-    const author = document.getElementById('author').value;
-    const year = document.getElementById('year').value;
-    const rating = document.getElementById('rating').value;
+    const author = document.getElementById('author-filter').value;
+    const year = document.getElementById('year-filter').value;
+    const rating = document.getElementById('rating-filter').value;
     const rows = document.querySelectorAll('#movie-list tr');
     rows.forEach(row => {
         const rowAuthor = row.querySelector('td:nth-child(2)').textContent;
         const rowYear = row.querySelector('td:nth-child(3)').textContent;
+        const rowRating = row.querySelector('td:nth-child(4)').textContent;
         let display = true;
         if (author && rowAuthor !== author) display = false;
         if (year && rowYear !== year) display = false;
-        if (rating && !rowRating.includes(rating)) display = false;
+        if (rating && rowRating !== rating) display = false;
         row.style.display = display ? '' : 'none';
     });
 }
@@ -120,23 +139,24 @@ function showAuthorDetails(authorId) {
     const author = authors[authorId];
     document.getElementById('author-name').textContent = author.name;
     document.getElementById('author-image').src = author.img;
-    document.getElementById('author-works').textContent = author.works.join(', ');
+    document.getElementById('author-works').textContent = 'Notable Works: ' + author.works.join(', ');
     document.getElementById('author-details').style.display = 'block';
+    document.getElementById('author-list').style.display = 'none';
 }
 
 function filterAuthors() {
     const authorFilter = document.getElementById('author-filter').value;
-    const rows = document.querySelectorAll('#author-list tr');
+    const rows = document.querySelectorAll('#author-list tbody tr');
     rows.forEach(row => {
         const rowAuthor = row.querySelector('td:first-child a').textContent;
         let display = true;
-        if (authorFilter && rowAuthor !== authorFilter) display = false;
+        if (authorFilter !== 'All' && rowAuthor !== authorFilter) display = false;
         row.style.display = display ? '' : 'none';
     });
 }
 
 function viewAllAuthors() {
-    const rows = document.querySelectorAll('#author-list tr');
+    const rows = document.querySelectorAll('#author-list tbody tr');
     rows.forEach(row => row.style.display = '');
 }
 
