@@ -78,49 +78,49 @@
                         </thead>
                         <tbody id="movie-list">
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('Spring Summer Fall Winter... and Spring')">Spring Summer Fall Winter... and Spring</a></td>
+                                <td><a href="#" onclick="showMovieDetails('spring-summer-fall-winter-spring')">Spring Summer Fall Winter... and Spring</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2003</td>
                                 <td>21</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('3-Iron')">3-Iron</a></td>
+                                <td><a href="#" onclick="showMovieDetails('3-iron')">3-Iron</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2004</td>
                                 <td>13</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('Oldboy')">Oldboy</a></td>
+                                <td><a href="#" onclick="showMovieDetails('oldboy')">Oldboy</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2003</td>
                                 <td>6</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('Parasite')">Parasite</a></td>
+                                <td><a href="#" onclick="showMovieDetails('parasite')">Parasite</a></td>
                                 <td>Bong Joon-ho</td>
                                 <td>2019</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('Memories of Murder')">Memories of Murder</a></td>
+                                <td><a href="#" onclick="showMovieDetails('memories-of-murder')">Memories of Murder</a></td>
                                 <td>Bong Joon-ho</td>
                                 <td>2003</td>
                                 <td>7</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('Pietà')">Pietà</a></td>
+                                <td><a href="#" onclick="showMovieDetails('pieta')">Pietà</a></td>
                                 <td>Kim Ki-duk</td>
                                 <td>2012</td>
                                 <td>15</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('I\'m a Cyborg, But That\'s OK')">I'm a Cyborg, But That's OK</a></td>
+                                <td><a href="#" onclick="showMovieDetails('im-a-cyborg-but-thats-ok')">I'm a Cyborg, But That's OK</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2006</td>
                                 <td>9</td>
                             </tr>
                             <tr>
-                                <td><a href="#" onclick="showMovieDetails('The Handmaiden')">The Handmaiden</a></td>
+                                <td><a href="#" onclick="showMovieDetails('the-handmaiden')">The Handmaiden</a></td>
                                 <td>Park Chan-wook</td>
                                 <td>2016</td>
                                 <td>5</td>
@@ -128,23 +128,12 @@
                         </tbody>
                     </table>
                 </div>
-                <section>
-                    <h1>Authors</h1>
-                    <article class="author mb-5">
-                        <h2>Kim Ki-duk</h2>
-                        <img src="img/kim-ki-duk.jpg" alt="Kim Ki-duk" class="img-fluid mb-3">
-                        <p><strong>Notable Works:</strong> Spring Summer Fall Winter... and Spring, 3-Iron, Pietà</p>
-                    </article>
-                    <article class="author mb-5">
-                        <h2>Bong Joon-ho</h2>
-                        <img src="img/bong-joon-ho.jpg" alt="Bong Joon-ho" class="img-fluid mb-3">
-                        <p><strong>Notable Works:</strong> Memories of Murder, The Host, Snowpiercer</p>
-                    </article>
-                    <article class="author mb-5">
-                        <h2>Park Chan-wook</h2>
-                        <img src="img/park-chan-wook.jpg" alt="Park Chan-wook" class="img-fluid mb-3">
-                        <p><strong>Notable Works:</strong> Oldboy, I’m a Cyborg, But That’s OK, The Handmaiden</p>
-                    </article>
+                <section id="movie-details" class="mt-5" style="display: none;">
+                    <h2 id="movie-title"></h2>
+                    <img id="movie-image" src="" alt="" class="img-fluid mb-3">
+                    <p><strong>Directed by:</strong> <span id="movie-director"></span></p>
+                    <p><strong>Release date:</strong> <span id="movie-release-date"></span></p>
+                    <p><strong>Box office:</strong> <span id="movie-box-office"></span></p>
                 </section>
             </section>
         </div>
