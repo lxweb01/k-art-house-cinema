@@ -10,21 +10,21 @@ const movies = {
         title: '3-Iron',
         img: 'img/kim-ki-duk-3-iron.jpg',
         director: 'Kim Ki-duk',
-        releaseDate: '2004',
-        boxOffice: '$2 million'
+        releaseDate: '15 October 2004',
+        boxOffice: '$0.3 million'
     },
     'oldboy': {
         title: 'Oldboy',
         img: 'img/park-chan-wook-oldboy.jpg',
         director: 'Park Chan-wook',
-        releaseDate: '2003',
+        releaseDate: '21 November 2003',
         boxOffice: '$15 million'
     },
     'parasite': {
         title: 'Parasite',
         img: 'img/bong-joon-ho-parasite.jpg',
         director: 'Bong Joon-ho',
-        releaseDate: '2019',
+        releaseDate: '30 May 2019',
         boxOffice: '$258 million'
     },
     'memories-of-murder': {
@@ -38,8 +38,8 @@ const movies = {
         title: 'Pietà',
         img: 'img/kim-ki-duk-pieta.jpg',
         director: 'Kim Ki-duk',
-        releaseDate: '3 September 2012',
-        boxOffice: '$9.6 million'
+        releaseDate: '6 September 2012',
+        boxOffice: '$0.32 million'
     },
     'im-a-cyborg-but-thats-ok': {
         title: 'I\'m a Cyborg, But That\'s OK',
@@ -93,11 +93,10 @@ function filterCatalog() {
     rows.forEach(row => {
         const rowAuthor = row.querySelector('td:nth-child(2)').textContent;
         const rowYear = row.querySelector('td:nth-child(3)').textContent;
-        const rowRating = row.querySelector('td:nth-child(4)').textContent;
         let display = true;
         if (author && rowAuthor !== author) display = false;
         if (year && rowYear !== year) display = false;
-        if (rating && rowRating !== rating) display = false;
+        if (rating && !rowRating.includes(rating)) display = false;
         row.style.display = display ? '' : 'none';
     });
 }
@@ -115,4 +114,32 @@ function showMovieDetails(movieId) {
     document.getElementById('movie-release-date').textContent = movie.releaseDate;
     document.getElementById('movie-box-office').textContent = movie.boxOffice;
     document.getElementById('movie-details').style.display = 'block';
+}
+
+function showAuthorDetails(authorId) {
+    const author = authors[authorId];
+    document.getElementById('author-name').textContent = author.name;
+    document.getElementById('author-image').src = author.img;
+    document.getElementById('author-works').textContent = author.works.join(', ');
+    document.getElementById('author-details').style.display = 'block';
+}
+
+function filterAuthors() {
+    const authorFilter = document.getElementById('author-filter').value;
+    const rows = document.querySelectorAll('#author-list tr');
+    rows.forEach(row => {
+        const rowAuthor = row.querySelector('td:first-child a').textContent;
+        let display = true;
+        if (authorFilter && rowAuthor !== authorFilter) display = false;
+        row.style.display = display ? '' : 'none';
+    });
+}
+
+function viewAllAuthors() {
+    const rows = document.querySelectorAll('#author-list tr');
+    rows.forEach(row => row.style.display = '');
+}
+
+function logout() {
+    alert('Logged out');
 }
