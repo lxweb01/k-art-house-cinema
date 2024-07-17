@@ -14,8 +14,9 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link text-white" href="index.html">Feed</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="catalogo.html">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="authors.html">Authors</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="profile.html">Profile</a></li>
                 </ul>
             </nav>
             <form class="form-inline" onsubmit="return searchMovies()">
@@ -24,59 +25,36 @@
             </form>
         </div>
     </header>
-    <main class="container mt-4">
-        <div class="row">
-            <aside class="col-md-3">
-                <div class="bg-light p-3 mb-3">
-                    <h5>Similar Movies:</h5>
-                    <ul class="list-unstyled">
-                        <li>Movie 1</li>
-                        <li>Movie 2</li>
-                        <li>Movie 3</li>
-                    </ul>
-                </div>
-            </aside>
-            <section class="col-md-9">
-                <div id="movie-feed">
-                    <article class="movie mb-5">
-                        <h2><a href="spring-summer-fall-winter-spring.html">Spring Summer Fall Winter... and Spring</a></h2>
-                        <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring" class="img-fluid mb-3">
-                        <p><strong>Directed by:</strong> Kim Ki-duk</p>
-                        <p><strong>Release date:</strong> 19 September 2003</p>
-                        <p><strong>Box office:</strong> $9.53 million</p>
-                        <p><strong>Comments:</strong></p>
-                        <ul class="list-unstyled">
-                            <li class="comment">
-                                JHON JHON: This movie captures the essence of karma in the Buddhist belief
-                                <span class="upvote">&#x1F44D; Like : 12</span> 
-                                <span class="downvote">&#x1F44E; Dislike : 4</span>
-                            </li>
-                            <li class="comment">
-                                JACK JACK: Kim-Ki Duk has outdone himself with this one
-                                <span class="upvote">&#x1F44D; Like : 10</span> 
-                                <span class="downvote">&#x1F44E; Dislike : 3</span>
-                            </li>
-                            <li class="comment">
-                                BETTY BETTY: Jhon Jhon is just yapping at this point
-                                <span class="upvote">&#x1F44D; Like : 5</span> 
-                                <span class="downvote">&#x1F44E; Dislike : 2</span>
-                            </li>
-                            <li class="comment">
-                                JOEY TEMPEST: Watched the movie and didn’t understand anything
-                                <span class="upvote">&#x1F44D; Like : 3</span> 
-                                <span class="downvote">&#x1F44E; Dislike : 8</span>
-                            </li>
-                        </ul>
-                    </article>
-                    <!-- Repeat for all movies in the feed -->
-                </div>
-            </section>
+    <main class="container mt-4" id="movie-feed">
+        <div class="movie">
+            <h2>Spring Summer Fall Winter... and Spring</h2>
+            <img src="img/kim-ki-duk-spring-1.jpg" alt="Spring Summer Fall Winter... and Spring" class="img-fluid mb-3">
+            <p>Directed by: Kim Ki-duk</p>
+            <p>Release date: 19 September 2003</p>
+            <p>Box office: $9.53 million</p>
+            <p>Comments:</p>
+            <ul>
+                <li>Great movie! Really enjoyed it. <button>👍</button> 10 <button>👎</button> 2</li>
+                <li>A bit slow, but the ending was worth it. <button>👍</button> 5 <button>👎</button> 1</li>
+            </ul>
         </div>
+        <div class="movie">
+            <h2>Memories of Murder</h2>
+            <img src="img/bong-joon-ho-memories.jpg" alt="Memories of Murder" class="img-fluid mb-3">
+            <p>Directed by: Bong Joon-ho</p>
+            <p>Release date: 2 May 2003</p>
+            <p>Box office: $20.1 million</p>
+            <p>Comments:</p>
+            <ul>
+                <li>Incredible storytelling and performances. <button>👍</button> 12 <button>👎</button> 3</li>
+                <li>Dark, gripping, and unforgettable. <button>👍</button> 8 <button>👎</button> 2</li>
+            </ul>
+        </div>
+        <!-- Add more movie divs as needed -->
     </main>
     <footer class="bg-dark text-white text-center py-2">
         <p>&copy; 2024 All Rights Reserved</p>
     </footer>
-
     <script src="js/scripts.js"></script>
 </body>
 </html>
