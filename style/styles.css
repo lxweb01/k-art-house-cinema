@@ -48,19 +48,16 @@ footer {
 .movie-feed, .movie-list, .author-list {
     background-color: #fff;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto; /* Center the container itself */
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    max-width: 800px; /* Set a maximum width for better readability */
+    text-align: center; /* Center the text within the container */
 }
 
 .movie, .author {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
-    width: 100%;
-    max-width: 800px;
+    margin: 0 auto; /* Center each movie/author item */
 }
 
 .movie:last-child, .author:last-child {
@@ -70,6 +67,8 @@ footer {
 .movie img, .author img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto; /* Center the images */
 }
 
 .comment {
