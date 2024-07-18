@@ -33,6 +33,9 @@ nav ul li a {
 
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -48,16 +51,19 @@ footer {
 .movie-feed, .movie-list, .author-list {
     background-color: #fff;
     padding: 20px;
-    margin: 20px auto; /* Center the container itself */
+    margin: 20px 0;
     border-radius: 5px;
-    max-width: 800px; /* Set a maximum width for better readability */
-    text-align: center; /* Center the text within the container */
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
 }
 
 .movie, .author {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
-    margin: 0 auto; /* Center each movie/author item */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .movie:last-child, .author:last-child {
@@ -68,7 +74,7 @@ footer {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* Center the images */
+    margin: 0 auto;
 }
 
 .comment {
