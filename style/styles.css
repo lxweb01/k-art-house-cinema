@@ -50,11 +50,17 @@ footer {
     padding: 20px;
     margin: 20px 0;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .movie, .author {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
+    width: 100%;
+    max-width: 800px;
 }
 
 .movie:last-child, .author:last-child {
