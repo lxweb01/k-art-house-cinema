@@ -78,6 +78,10 @@ footer {
     margin: 0 auto;
 }
 
+.movie h2, .movie p {
+    text-align: center; /* Center the text within movie titles and paragraphs */
+}
+
 .comment {
     margin-bottom: 10px;
 }
