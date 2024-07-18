@@ -71,6 +71,22 @@ footer {
     text-align: center; /* Center the text within movie titles, paragraphs, and list items */
 }
 
+.movie ul {
+    list-style: none;
+    padding: 0;
+}
+
+.movie ul li {
+    display: inline-block;
+    text-align: left; /* Align text within list items */
+}
+
+.movie ul li::before {
+    content: "• ";
+    display: inline-block;
+    text-align: center;
+}
+
 .movie:last-child, .author:last-child {
     border-bottom: none;
 }
