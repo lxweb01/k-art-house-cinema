@@ -67,6 +67,10 @@ footer {
     text-align: center; /* Center text within each movie/author item */
 }
 
+.movie h2, .movie p, .movie ul, .movie li {
+    text-align: center; /* Center the text within movie titles, paragraphs, and list items */
+}
+
 .movie:last-child, .author:last-child {
     border-bottom: none;
 }
@@ -76,10 +80,6 @@ footer {
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-.movie h2, .movie p {
-    text-align: center; /* Center the text within movie titles and paragraphs */
 }
 
 .comment {
