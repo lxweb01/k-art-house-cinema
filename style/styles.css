@@ -64,6 +64,7 @@ footer {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center; /* Center text within each movie/author item */
 }
 
 .movie:last-child, .author:last-child {
